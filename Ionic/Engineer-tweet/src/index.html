@@ -27,6 +27,22 @@
     }
   </script>-->
 
+  <!-- js libraries -->
+  <script type="text/javascript" src="../marked/lib/marked.js"></script>
+  <!-- <script>
+    $(document).ready(function(){
+        var target = $("#markdown_content");
+
+        $.ajax({
+            url: target[0].attributes["src"].value,
+        }).success(function(data){
+            target.append(marked(data));
+        }).error(function(data){
+            target.append("This content failed to load.");
+        });
+    });
+  </script> -->
+
   <link href="build/main.css" rel="stylesheet">
 </head>
 <body>
