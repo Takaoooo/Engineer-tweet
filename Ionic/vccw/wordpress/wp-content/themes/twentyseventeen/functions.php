@@ -16,7 +16,16 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
+header("Access-Control-Allow-Origin: *");
+add_action('wp_ajax_tell_me', 'tell_me');  // ログイン状態のユーザーからのアクセスで動作する
+add_action('wp_ajax_nopriv_tell_me', 'tell_me'); // 非ログインのユーザーからのアクセスで動作する
+function tell_me() {
+  $res = "answer";
 
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+
+  die();
+}
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *

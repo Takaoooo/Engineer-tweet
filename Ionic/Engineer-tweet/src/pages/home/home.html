@@ -31,4 +31,50 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="./jquery.xdomainajax.js"></script>
+  <script type="text/javascript">
+    console.log("test");
+    $(document).ready(function(){
+      $.ajax({
+        crossDomain: true,
+      });
+      alert("jQueryファイルの読み込み完了でーす。");
+    });
+  </script>
 </ion-content>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="./jquery.xdomainajax.js"></script>
+<script type="text/javascript">
+  console.log("test");
+  $(document).ready(function(){
+    $.ajax({
+      crossDomain: true,
+    });
+    alert("jQueryファイルの読み込み完了でーす。");
+  });
+</script>
+<script> var wp_url_admin_ajax = '<?php echo admin_url("admin-ajax.php"); ?>'; </script>
+  <script>
+      console.log(wp_url_admin_ajax)
+    jQuery(function ($) {
+      $.ajax({
+        crossDomain: true,
+        type: 'POST',
+        url: wp_url_admin_ajax,
+        data: {
+          'action': 'tell_me'
+        },
+        success: function (response) {
+          console.log("test");
+          json = eval("(" + response + ")");
+          if (json.err) {
+            result = "error:404";
+          } else {
+            console.log(json);
+          }
+        }
+      });
+    });
+  </script>
