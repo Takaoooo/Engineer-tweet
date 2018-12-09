@@ -16,8 +16,14 @@ export class HomePage {
     //   alert("jQueryファイルの読み込み完了でーす。");
     // });
     $(function () {
-      alert("hoge");
+      // alert("hoge");
+      $("#display").css("color","#d9534f");
+      console.log($("#editor"));
     });
+
+    // $(function ( {
+
+    // }));
   }
 
 }
