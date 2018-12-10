@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+// import { text } from '@angular/core/src/render3/instructions';
+
+declare var marked: any;
 
 @Component({
   selector: 'page-home',
@@ -7,23 +10,31 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  text: string = "editor text";
+
   constructor(public navCtrl: NavController) {
     console.log("home.ts");
-    // $(document).ready(function(){
-    //   $.ajax({
-    //     crossDomain: true,
-    //   });
-    //   alert("jQueryファイルの読み込み完了でーす。");
-    // });
     $(function () {
       // alert("hoge");
-      $("#display").css("color","#d9534f");
+      // $("#display").css("color","#d9534f");
       console.log($("#editor"));
+      let text = $("#editor");
+      console.log(text);
+
+      // marked.setOptions({
+      //   langPrefix: ''
+      // });
     });
+  }
 
-    // $(function ( {
+  display(){
+    console.log("check2");
+    this.text = document.forms[0].editor["value"];
 
-    // }));
+
+    var html = marked(this.text);
+
+    $('#result').html(html);
   }
 
 }

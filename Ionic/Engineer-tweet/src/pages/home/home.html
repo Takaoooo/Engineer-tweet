@@ -21,20 +21,30 @@
       <div id="markdown_content" src="./sample.markdown"> </div>
     </div> -->
   <!-- </div> -->
+  <form action="" name="editor" id="ediotr">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <textarea id="editor" class="form-control"></textarea>
+            <button ion-button round color="light" (click)="display()">Round Button</button>
+            <!-- <script　type="text/javascript"> -->
+            <script>
+              function display(){
+                console.log("displayyy");
+              }
+            </script>
+          </div>
+          <div class="col-xs-6">
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+  </form>
+
   <div class="container">
     <div class="row">
       <div class="col-xs-6">
-        <textarea id="editor" class="form-control"></textarea>
-      </div>
-      <div class="col-xs-6">
-        <div id="result"></div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <textarea id="display" class="form-control"></textarea>
+        <textarea id="display" class="form-control">{{text}}</textarea>
       </div>
       <div class="col-xs-6">
         <div id="result"></div>
